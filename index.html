@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren Tahfidz Al-Quran Alhuda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23065f46' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 to-teal-50 islamic-pattern">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-emerald-800">PP Tahfidz Alhuda</h1>
+                        <p class="text-sm text-emerald-600">Menghafal Al-Quran dengan Hati</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-emerald-700 hover:text-emerald-900 font-medium transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-emerald-700 hover:text-emerald-900 font-medium transition-colors">Tentang</a>
+                    <a href="#program" class="text-emerald-700 hover:text-emerald-900 font-medium transition-colors">Program</a>
+                    <a href="#fasilitas" class="text-emerald-700 hover:text-emerald-900 font-medium transition-colors">Fasilitas</a>
+                    <a href="#kontak" class="text-emerald-700 hover:text-emerald-900 font-medium transition-colors">Kontak</a>
+                </div>
+                
+                <button class="md:hidden text-emerald-700" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#beranda" class="text-emerald-700 hover:text-emerald-900 font-medium py-2">Beranda</a>
+                    <a href="#tentang" class="text-emerald-700 hover:text-emerald-900 font-medium py-2">Tentang</a>
+                    <a href="#program" class="text-emerald-700 hover:text-emerald-900 font-medium py-2">Program</a>
+                    <a href="#fasilitas" class="text-emerald-700 hover:text-emerald-900 font-medium py-2">Fasilitas</a>
+                    <a href="#kontak" class="text-emerald-700 hover:text-emerald-900 font-medium py-2">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="pt-20 pb-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-emerald-900 mb-6 leading-tight">
+                        Pondok Pesantren<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Tahfidz Al-Quran</span><br>
+                        Alhuda
+                    </h1>
+                    <p class="text-xl text-emerald-700 mb-8 leading-relaxed">
+                        Membentuk generasi Qur'ani yang berakhlak mulia, menghafal Al-Quran dengan metode yang efektif dan menyenangkan.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('program')" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Lihat Program
+                        </button>
+                        <button onclick="scrollToSection('kontak')" class="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300">
+                            Hubungi Kami
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-3xl p-8 shadow-2xl">
+                            <svg class="w-full h-80" viewBox="0 0 400 300" fill="none">
+                                <!-- Mosque silhouette -->
+                                <path d="M200 50 L150 100 L50 100 L50 250 L350 250 L350 100 L250 100 L200 50 Z" fill="#065f46"/>
+                                <circle cx="200" cy="80" r="15" fill="#0d9488"/>
+                                <rect x="180" y="95" width="40" height="8" fill="#0d9488"/>
+                                
+                                <!-- Minarets -->
+                                <rect x="80" y="60" width="20" height="40" fill="#065f46"/>
+                                <rect x="300" y="60" width="20" height="40" fill="#065f46"/>
+                                <circle cx="90" cy="55" r="8" fill="#0d9488"/>
+                                <circle cx="310" cy="55" r="8" fill="#0d9488"/>
+                                
+                                <!-- Windows -->
+                                <rect x="120" y="130" width="25" height="35" rx="12" fill="#fbbf24"/>
+                                <rect x="160" y="130" width="25" height="35" rx="12" fill="#fbbf24"/>
+                                <rect x="215" y="130" width="25" height="35" rx="12" fill="#fbbf24"/>
+                                <rect x="255" y="130" width="25" height="35" rx="12" fill="#fbbf24"/>
+                                
+                                <!-- Door -->
+                                <rect x="180" y="200" width="40" height="50" rx="20" fill="#92400e"/>
+                                
+                                <!-- Decorative elements -->
+                                <circle cx="100" cy="200" r="3" fill="#fbbf24"/>
+                                <circle cx="120" cy="200" r="3" fill="#fbbf24"/>
+                                <circle cx="280" cy="200" r="3" fill="#fbbf24"/>
+                                <circle cx="300" cy="200" r="3" fill="#fbbf24"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Floating elements -->
+                        <div class="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                            <svg class="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
+                            <svg class="w-8 h-8 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-900 mb-4">Tentang Pondok Pesantren</h2>
+                <p class="text-xl text-emerald-700 max-w-3xl mx-auto">
+                    Pondok Pesantren Tahfidz Al-Quran Alhuda adalah lembaga pendidikan Islam yang fokus pada pembentukan hafidz dan hafidzah Al-Quran dengan akhlak yang mulia.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center hover-lift bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-900 mb-4">Visi</h3>
+                    <p class="text-emerald-700">
+                        Menjadi lembaga pendidikan Islam terdepan dalam mencetak generasi penghafal Al-Quran yang berakhlak mulia dan berwawasan luas.
+                    </p>
+                </div>
+                
+                <div class="text-center hover-lift bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-900 mb-4">Misi</h3>
+                    <p class="text-emerald-700">
+                        Menyelenggarakan pendidikan tahfidz Al-Quran dengan metode yang efektif, menciptakan lingkungan Islami yang kondusif untuk pembelajaran.
+                    </p>
+                </div>
+                
+                <div class="text-center hover-lift bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-emerald-900 mb-4">Nilai</h3>
+                    <p class="text-emerald-700">
+                        Mengutamakan kualitas hafalan, pembentukan akhlak mulia, kedisiplinan, dan pengembangan potensi santri secara holistik.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="program" class="py-16 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-900 mb-4">Program Unggulan</h2>
+                <p class="text-xl text-emerald-700 max-w-3xl mx-auto">
+                    Berbagai program tahfidz yang dirancang khusus untuk mengoptimalkan kemampuan menghafal Al-Quran dengan metode yang terbukti efektif.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-6">
+                        <svg class="w-12 h-12 text-white mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Tahfidz 30 Juz</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-emerald-700 mb-4">
+                            Program lengkap menghafal 30 juz Al-Quran dengan bimbingan ustadz berpengalaman dan metode yang telah terbukti.
+                        </p>
+                        <ul class="space-y-2 text-emerald-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Durasi 3-4 tahun
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Metode Talaqqi
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Evaluasi berkala
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift">
+                    <div class="bg-gradient-to-r from-teal-600 to-emerald-600 p-6">
+                        <svg class="w-12 h-12 text-white mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Tahsin & Tajwid</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-emerald-700 mb-4">
+                            Program perbaikan bacaan Al-Quran dengan fokus pada kaidah tajwid yang benar dan makharijul huruf yang tepat.
+                        </p>
+                        <ul class="space-y-2 text-emerald-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Kelas kecil (5-8 santri)
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Bimbingan individual
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Sertifikat kelulusan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover-lift">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 p-6">
+                        <svg class="w-12 h-12 text-white mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <h3 class="text-2xl font-bold text-white">Tahfidz Intensif</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-emerald-700 mb-4">
+                            Program khusus untuk santri yang ingin menyelesaikan hafalan dalam waktu lebih singkat dengan intensitas tinggi.
+                        </p>
+                        <ul class="space-y-2 text-emerald-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Durasi 2 tahun
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                8 jam per hari
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Seleksi ketat
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="fasilitas" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-900 mb-4">Fasilitas Lengkap</h2>
+                <p class="text-xl text-emerald-700 max-w-3xl mx-auto">
+                    Fasilitas modern dan nyaman untuk mendukung proses pembelajaran dan kehidupan santri di pondok pesantren.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Asrama Nyaman</h3>
+                    <p class="text-emerald-700 text-sm">Kamar ber-AC dengan fasilitas lengkap</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Ruang Kelas</h3>
+                    <p class="text-emerald-700 text-sm">Kelas ber-AC dengan audio system</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Perpustakaan</h3>
+                    <p class="text-emerald-700 text-sm">Koleksi kitab dan buku Islam lengkap</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Lapangan Olahraga</h3>
+                    <p class="text-emerald-700 text-sm">Futsal, basket, dan badminton</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Masjid</h3>
+                    <p class="text-emerald-700 text-sm">Masjid megah untuk ibadah berjamaah</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.46L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1.01 1H2.01c-.56 0-1.01-.45-1.01-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Dapur & Kantin</h3>
+                    <p class="text-emerald-700 text-sm">Makanan sehat dan bergizi</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">Klinik Kesehatan</h3>
+                    <p class="text-emerald-700 text-sm">Pelayanan kesehatan 24 jam</p>
+                </div>
+                
+                <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl hover-lift">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM10 5.47l4 1.4v11.66l-4-1.4V5.47z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-emerald-900 mb-2">WiFi & Lab Komputer</h3>
+                    <p class="text-emerald-700 text-sm">Akses internet dan teknologi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gradient-to-r from-emerald-600 to-teal-600">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div>
+                    <div class="text-4xl font-bold mb-2" id="counter1">0</div>
+                    <p class="text-emerald-100">Santri Aktif</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2" id="counter2">0</div>
+                    <p class="text-emerald-100">Hafidz Lulusan</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2" id="counter3">0</div>
+                    <p class="text-emerald-100">Ustadz Berpengalaman</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2" id="counter4">0</div>
+                    <p class="text-emerald-100">Tahun Berdiri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-emerald-900 mb-4">Hubungi Kami</h2>
+                <p class="text-xl text-emerald-700 max-w-3xl mx-auto">
+                    Bergabunglah dengan keluarga besar Pondok Pesantren Tahfidz Al-Quran Alhuda. Kami siap membantu perjalanan tahfidz putra-putri Anda.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-emerald-900 mb-2">Alamat</h3>
+                                <p class="text-emerald-700">
+                                    Jl. Raya Tahfidz No. 123<br>
+                                    Kecamatan Sumber Ilmu<br>
+                                    Kabupaten Barokah, 12345
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-emerald-900 mb-2">Telepon</h3>
+                                <p class="text-emerald-700">
+                                    +62 812-3456-7890<br>
+                                    +62 21-1234-5678
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-emerald-900 mb-2">Email</h3>
+                                <p class="text-emerald-700">
+                                    info@pptahfidzalhuda.ac.id<br>
+                                    pendaftaran@pptahfidzalhuda.ac.id
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-emerald-900 mb-6">Formulir Pendaftaran</h3>
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-emerald-800 font-medium mb-2">Nama Lengkap</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors">
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-emerald-800 font-medium mb-2">Umur</label>
+                                <input type="number" required class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-emerald-800 font-medium mb-2">Jenis Kelamin</label>
+                                <select required class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors">
+                                    <option value="">Pilih</option>
+                                    <option value="laki-laki">Laki-laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-emerald-800 font-medium mb-2">Program yang Diminati</label>
+                            <select required class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors">
+                                <option value="">Pilih Program</option>
+                                <option value="tahfidz-30-juz">Tahfidz 30 Juz</option>
+                                <option value="tahsin-tajwid">Tahsin & Tajwid</option>
+                                <option value="tahfidz-intensif">Tahfidz Intensif</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-emerald-800 font-medium mb-2">Nomor WhatsApp</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-emerald-800 font-medium mb-2">Pesan (Opsional)</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-emerald-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Kirim Pendaftaran
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">PP Tahfidz Alhuda</h3>
+                            <p class="text-emerald-300 text-sm">Menghafal Al-Quran dengan Hati</p>
+                        </div>
+                    </div>
+                    <p class="text-emerald-200 mb-4">
+                        Membentuk generasi Qur'ani yang berakhlak mulia dan berwawasan luas untuk masa depan yang gemilang.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Program</h4>
+                    <ul class="space-y-2 text-emerald-200">
+                        <li><a href="#" class="hover:text-white transition-colors">Tahfidz 30 Juz</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tahsin & Tajwid</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tahfidz Intensif</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Program Khusus</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Informasi</h4>
+                    <ul class="space-y-2 text-emerald-200">
+                        <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Fasilitas</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Berita</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-emerald-200 text-sm">
+                        Dapatkan update terbaru tentang kegiatan dan program pondok pesantren.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-emerald-700 mt-8 pt-8 text-center">
+                <p class="text-emerald-200">
+                    © 2024 Pondok Pesantren Tahfidz Al-Quran Alhuda. Semua hak dilindungi.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Counter animation
+        function animateCounter(elementId, targetValue, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const startValue = 0;
+            const increment = targetValue / (duration / 16);
+            let currentValue = startValue;
+
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= targetValue) {
+                    element.textContent = targetValue;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(currentValue);
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for counter animation
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('counter1', 450);
+                    animateCounter('counter2', 280);
+                    animateCounter('counter3', 25);
+                    animateCounter('counter4', 15);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Start observing the statistics section
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.py-16.bg-gradient-to-r');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            alert('Terima kasih! Pendaftaran Anda telah diterima. Tim kami akan menghubungi Anda segera.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9867ee19f1b79cb1',t:'MTc1OTExMTY3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
